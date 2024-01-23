@@ -1,7 +1,7 @@
 # import streamlit for GUI, plotly for the graph
 # import backend to utilize the api from https://openweathermap.org/
 import streamlit as st
-import plotly as px
+import plotly.express as px
 import pytz
 from datetime import datetime
 from backend import get_data
@@ -59,7 +59,7 @@ if location:
                 if index % images_per_row == 0:
                     cols = st.columns(images_per_row)
 
-                # Display the image in the appropriate column
+            # Display the image in the appropriate column
                 with cols[index % images_per_row]:
                     st.image(image_path, width=115)
                     st.caption(date)
